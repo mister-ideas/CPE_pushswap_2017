@@ -16,7 +16,7 @@ List *initialisation(int ac, char **av)
 
 	if (list == NULL || element == NULL)
 		return (1);
-	element->nb = my_getnbr(av[ac - 1]);
+	element->nb = 0;
 	element->next = NULL;
 	list->first = element;
 
