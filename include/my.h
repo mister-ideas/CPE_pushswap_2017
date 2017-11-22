@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2017
-** Bistro-matic
+** Library
 ** File description:
 ** my.h
 */
@@ -10,6 +10,8 @@
 
 void my_putchar(char c);
 void my_putstr(char const *str);
+
 int my_put_nbr(int nb);
+int my_getnbr(char const *str);
 
 #endif

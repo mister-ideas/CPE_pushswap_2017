@@ -7,7 +7,8 @@
 
 SRC_DIR=	.
 
-SRC=		$(SRC_DIR)/pushswap.c
+SRC=		$(SRC_DIR)/push_swap.c 		\
+		$(SRC_DIR)/linked_list.c
 
 OBJ=		$(SRC:.c=.o)
 
@@ -23,7 +24,7 @@ all:		$(NAME)
 
 $(NAME):	$(OBJ)
 		make -C lib/src
-		gcc -o $(NAME) $(OBJ)
+		gcc -o $(NAME) $(OBJ) $(LFLAGS)
 
 clean:
 		rm -f $(OBJ)

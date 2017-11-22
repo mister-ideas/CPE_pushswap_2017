@@ -1,22 +1,43 @@
 /*
 ** EPITECH PROJECT, 2017
-** my_ls_bootstrap
+** PushSwap
 ** File description:
-** info_file.c
+** push_swap.c
 */
 
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <unistd.h>
+#include <stdlib.h>
+#include "include/my.h"
+#include "include/push_swap.h"
+
+int special_cases(int ac, char **av)
+{
+	int j = 0;
+
+	if (ac == 2) {
+		my_putchar('\n');
+		return (1);
+	}
+	for (int i = 1; av[i + 1]; i++) {
+		if (my_getnbr(av[i]) > my_getnbr(av[i + 1]))
+			j++;
+	}
+	if (j == 0) {
+		my_putchar('\n');
+		return (1);
+	}
+	return (0);
+}
 
 int main(int ac, char **av)
 {
-	struct stat s;
+	List *nombres = initialisation(ac, av);
 
-	if (stat("Makefile", &s) == -1) {
-		write(1, "File not found\n", 15); 
+	if (ac == 1)
 		return (84);
-	}
-	write(1, "Name:   ", 8);
+	if (special_cases(ac, av) == 1)
+		return (0);
+	for (int i = ac - 2; i != 0; i--)
+		insertion(nombres, my_getnbr(av[i]));
+	display(nombres);
 	return (0);
 }
