@@ -21,7 +21,7 @@ struct List
 	Element *first;
 };
 
-List *initialisation(int ac, char **av);
+List *initialisation();
 int insertion(List *list, int new_nb);
 int deletion(List *list);
 int display(List *list);

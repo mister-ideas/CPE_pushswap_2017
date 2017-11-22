@@ -1,5 +1,5 @@
 /*
-** EPITECH PROJECT, 2017
+1;4804;0c** EPITECH PROJECT, 2017
 ** PushSwap
 ** File description:
 ** linked_list.c
@@ -9,7 +9,7 @@
 #include "include/my.h"
 #include "include/push_swap.h"
 
-List *initialisation(int ac, char **av)
+List *initialisation()
 {
 	List *list = malloc(sizeof(*list));
 	Element *element = malloc(sizeof(*element));
@@ -53,8 +53,9 @@ int display(List *list)
 	if (list == NULL)
 		return (1);
 	while (actual != NULL) {
-		printf("%d -> ", actual->nb);
+		my_put_nbr(actual->nb);
+		my_putchar(' ');
 		actual = actual->next;
 	}
-	printf("NULL\n");
+	my_putstr("NULL\n");
 }
