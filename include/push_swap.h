@@ -22,8 +22,13 @@ struct List
 };
 
 List *initialisation();
+
 int insertion(List *list, int new_nb);
 int deletion(List *list);
 int display(List *list);
+
+void swap(List *list);
+void pa(List *la, List *lb);
+void pb(List *lb, List *la);
 
 #endif

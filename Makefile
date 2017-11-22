@@ -8,13 +8,14 @@
 SRC_DIR=	.
 
 SRC=		$(SRC_DIR)/push_swap.c 		\
-		$(SRC_DIR)/linked_list.c
+		$(SRC_DIR)/linked_list.c	\
+		$(SRC_DIR)/operations.c
 
 OBJ=		$(SRC:.c=.o)
 
 CFLAGS= 	-W -Wall -fno-builtin
 
-CPPFLAG=	-I include/
+CPPFLAGS=	-I include/
 
 LFLAGS=		-L lib/my/ -l my
 

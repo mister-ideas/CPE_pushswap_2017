@@ -28,27 +28,22 @@ int special_cases(int ac, char **av)
 	return (0);
 }
 
-void swap(List *list)
+void sorter(List *la, List *lb)
 {
-	int temp = list->first->nb;
-
-	list->first->nb = list->first->next->nb;
-	list->first->next->nb = temp;
-	my_putstr("sa");
-}
-
-void pa(List *la, List *lb)
-{
-	insertion(la, lb->first->nb);
-	deletion(lb);
-	my_putstr("pa");
-}
-
-void pb(List *lb, List *la)
-{
-	insertion(lb, la->first->nb);
-	deletion(la);
-	my_putstr("pb");
+	while (la->first->next->nb != 0) {
+		if (la->first->nb > la->first->next->nb) {
+			swap(la);
+			my_putchar(' ');
+		}
+		if (lb->first->nb > la->first->nb) {
+			pa(la, lb);
+			my_putchar(' ');
+		}
+		else {
+			pb(lb, la);
+			my_putchar(' ');
+		}
+	}
 }
 
 int main(int ac, char **av)
@@ -64,20 +59,7 @@ int main(int ac, char **av)
 		return (0);
 	for (int i = ac - 1; i != 0; i--)
 		insertion(la, my_getnbr(av[i]));
-	while (la->first->next->nb != 0) {
-		if (la->first->nb > la->first->next->nb) {
-			swap(la);
-			my_putchar(' ');
-		}
-		if (lb->first->nb > la->first->nb) {
-			pa(la, lb);
-			my_putchar(' ');
-		}
-		else {
-			pb(lb, la);
-			my_putchar(' ');
-		}
-	}
+	sorter(la, lb);
 	while (lb->first->nb != 0) {
 		pa(la, lb);
 		if (lb->first->nb != 0)

@@ -25,7 +25,7 @@ List *initialisation()
 int insertion(List *list, int new_nb)
 {
 	Element *new = malloc(sizeof(*new));
-	
+
 	if (list == NULL || new == NULL)
 		return (1);
 	new->nb = new_nb;
@@ -36,10 +36,11 @@ int insertion(List *list, int new_nb)
 
 int deletion(List *list)
 {
+	Element *to_delete = list->first;
+
 	if (list == NULL)
 		return (1);
 	if (list->first != NULL) {
-		Element *to_delete = list->first;
 		list->first = list->first->next;
 		free(to_delete);
 	}
@@ -58,4 +59,5 @@ int display(List *list)
 		actual = actual->next;
 	}
 	my_putstr("NULL\n");
+	return (0);
 }
