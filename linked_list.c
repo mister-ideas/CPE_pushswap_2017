@@ -19,7 +19,6 @@ List *initialisation(int ac, char **av)
 	element->nb = 0;
 	element->next = NULL;
 	list->first = element;
-
 	return (list);
 }
 

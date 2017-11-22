@@ -1,5 +1,5 @@
 /*
-1;4804;0c** EPITECH PROJECT, 2017
+** EPITECH PROJECT, 2017
 ** PushSwap
 ** File description:
 ** push_swap.c
@@ -28,6 +28,13 @@ int special_cases(int ac, char **av)
 	return (0);
 }
 
+void swap(List *list)
+{
+	int temp = list->first->nb;
+	list->first->nb = list->first->next->nb;
+	list->first->next->nb = temp;
+}
+
 int main(int ac, char **av)
 {
 	List *la = initialisation(ac, av);
@@ -39,6 +46,7 @@ int main(int ac, char **av)
 		return (0);
 	for (int i = ac - 1; i != 0; i--)
 		insertion(la, my_getnbr(av[i]));
+	swap(la);
 	display(la);
 	return (0);
 }
