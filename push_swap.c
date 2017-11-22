@@ -56,8 +56,10 @@ int main(int ac, char **av)
 	List *la = initialisation(ac, av);
 	List *lb = initialisation(ac, av);
 
-	if (ac == 1)
+	if (ac == 1) {
+		my_putchar('\n');
 		return (84);
+	}
 	if (special_cases(ac, av) == 1)
 		return (0);
 	for (int i = ac - 1; i != 0; i--)
