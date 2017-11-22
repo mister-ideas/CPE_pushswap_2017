@@ -1,5 +1,5 @@
 /*
-1;4804;0c** EPITECH PROJECT, 2017
+** EPITECH PROJECT, 2017
 ** PushSwap
 ** File description:
 ** linked_list.c
