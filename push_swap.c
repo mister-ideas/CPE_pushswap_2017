@@ -51,7 +51,7 @@ int main(int ac, char **av)
 	List *la = initialisation(ac, av);
 	List *lb = initialisation(ac, av);
 
-	if (ac == 1 || ac > 1001)
+	if (ac == 1 || ac > 1501)
 		return (84);
 	if (special_cases(ac, av) == 1)
 		return (0);
