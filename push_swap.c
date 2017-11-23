@@ -13,7 +13,7 @@ int special_cases(int ac, char **av)
 {
 	int j = 0;
 
-	if (ac == 2) {
+	if (ac == 2 || ac > 1001) {
 		my_putchar('\n');
 		return (1);
 	}
