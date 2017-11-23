@@ -13,7 +13,7 @@ int special_cases(int ac, char **av)
 {
 	int j = 0;
 
-	if (ac == 2 || ac > 1001) {
+	if (ac == 2 || ac > 1003) {
 		my_putchar('\n');
 		return (1);
 	}
@@ -30,19 +30,19 @@ int special_cases(int ac, char **av)
 
 void sorter(List *la, List *lb)
 {
-	while (la->first->next->nb != 0) {
-		if (la->first->nb > la->first->next->nb) {
-			swap(la);
-			my_putchar(' ');
-		}
-		if (lb->first->nb > la->first->nb) {
-			pa(la, lb);
-			my_putchar(' ');
-		}
-		else {
-			pb(lb, la);
-			my_putchar(' ');
-		}
+	if (la->first->nb > la->first->next->nb) {
+		swap(la);
+		my_putchar(' ');
+	}
+	if (lb->first->next == NULL) {
+		pb(lb, la);
+		my_putchar(' ');
+	} else if (lb->first->nb > la->first->nb) {
+		pa(la, lb);
+		my_putchar(' ');
+	} else {
+		pb(lb, la);
+		my_putchar(' ');
 	}
 }
 
@@ -57,10 +57,11 @@ int main(int ac, char **av)
 		return (0);
 	for (int i = ac - 1; i != 0; i--)
 		insertion(la, my_getnbr(av[i]));
-	sorter(la, lb);
-	while (lb->first->nb != 0) {
+	while (la->first->next->next != NULL)
+		sorter(la, lb);
+	while (lb->first->next != NULL) {
 		pa(la, lb);
-		if (lb->first->nb != 0)
+		if (lb->first->next != NULL)
 			my_putchar(' ');
 	}
 	my_putchar('\n');
