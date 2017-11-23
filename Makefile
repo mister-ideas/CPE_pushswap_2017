@@ -1,6 +1,6 @@
 ##
 ## EPITECH PROJECT, 2017
-## my_ls_bootstrap
+## PushSwap
 ## File description:
 ## Makefile
 ##
