@@ -15,7 +15,7 @@ List *initialisation()
 	Element *element = malloc(sizeof(*element));
 
 	if (list == NULL || element == NULL)
-		return (1);
+		return (84);
 	element->nb = 0;
 	element->next = NULL;
 	list->first = element;
@@ -27,7 +27,7 @@ int insertion(List *list, int new_nb)
 	Element *new = malloc(sizeof(*new));
 
 	if (list == NULL || new == NULL)
-		return (1);
+		return (84);
 	new->nb = new_nb;
 	new->next = list->first;
 	list->first = new;
@@ -39,7 +39,7 @@ int deletion(List *list)
 	Element *to_delete = list->first;
 
 	if (list == NULL)
-		return (1);
+		return (84);
 	if (list->first != NULL) {
 		list->first = list->first->next;
 		free(to_delete);
@@ -52,7 +52,7 @@ int display(List *list)
 	Element *actual = list->first;
 
 	if (list == NULL)
-		return (1);
+		return (84);
 	while (actual != NULL) {
 		my_put_nbr(actual->nb);
 		my_putchar(' ');
