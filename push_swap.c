@@ -13,7 +13,7 @@ int special_cases(int ac, char **av)
 {
 	int j = 0;
 
-	if (ac == 2) {
+	if (ac == 2 || ac > 1001) {
 		my_putchar('\n');
 		return (1);
 	}
@@ -51,7 +51,7 @@ int main(int ac, char **av)
 	List *la = initialisation(ac, av);
 	List *lb = initialisation(ac, av);
 
-	if (ac == 1 || ac > 1001)
+	if (ac == 1)
 		return (84);
 	if (special_cases(ac, av) == 1)
 		return (0);
