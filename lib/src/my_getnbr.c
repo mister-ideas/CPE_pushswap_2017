@@ -11,7 +11,7 @@ int my_getnbr(char const *str)
 	int nb = 0;
 	int neg = 0;
 
-	for (i; str[i] != '\0'; i += 1) {
+	while (str[i]) {
 		while (str[i] == '+' || str[i] == '-') {
 			if (str[i] == '-') {
 				neg++;
@@ -25,6 +25,7 @@ int my_getnbr(char const *str)
 				nb = nb * -1;
 			return (nb);
 		}
+		i++;
 	}
 	if (neg %2 == 1)
 		nb = nb * -1;
