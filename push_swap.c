@@ -36,7 +36,7 @@ int special_cases(int ac, char **av)
 	return (0);
 }
 
-void sorter(List *la, List *lb)
+sorter(List *la, List *lb)
 {
 	if (la->first->nb > la->first->next->nb) {
 		swap(la);
@@ -65,9 +65,9 @@ int main(int ac, char **av)
 		return (0);
 	for (int i = ac - 1; i != 0; i--)
 		insertion(la, my_getnbr(av[i]));
-	while (la->first->next->next != NULL)
+	while (la->first->next->next)
 		sorter(la, lb);
-	while (lb->first->next != NULL) {
+	while (lb->first->next) {
 		pa(la, lb);
 		check_end(lb);
 	}
