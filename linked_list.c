@@ -15,7 +15,7 @@ List *initialisation()
 	Element *element = malloc(sizeof(*element));
 
 	if (list == NULL || element == NULL)
-		return;
+		return (84);
 	element->nb = 0;
 	element->next = NULL;
 	list->first = element;
