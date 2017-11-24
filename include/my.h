@@ -15,6 +15,4 @@ int my_put_nbr(int nb);
 int my_getnbr(char const *str);
 int my_strlen(char* str);
 
-char *my_strcat(char *dest, char *src);
-
 #endif

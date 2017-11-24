@@ -21,7 +21,7 @@ int special_cases(int ac, char **av)
 {
 	int j = 0;
 
-	if (ac == 2 || ac > 1001) {
+	if (ac == 2 || ac > 2001) {
 		my_putchar('\n');
 		return (1);
 	}
@@ -36,7 +36,7 @@ int special_cases(int ac, char **av)
 	return (0);
 }
 
-sorter(List *la, List *lb)
+void sorter(List *la, List *lb)
 {
 	if (la->first->nb > la->first->next->nb) {
 		swap(la);
