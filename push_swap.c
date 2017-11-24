@@ -32,17 +32,17 @@ void sorter(List *la, List *lb)
 {
 	if (la->first->nb > la->first->next->nb) {
 		swap(la);
-		my_putchar(' ');
+		my_putstr("sa ");
 	}
 	if (lb->first->next == NULL) {
 		pb(lb, la);
-		my_putchar(' ');
+		my_putstr("pb ");
 	} else if (lb->first->nb > la->first->nb) {
 		pa(la, lb);
-		my_putchar(' ');
+		my_putstr("pb ");
 	} else {
 		pb(lb, la);
-		my_putchar(' ');
+		my_putchar("pb ");
 	}
 }
 
