@@ -9,6 +9,14 @@
 #include "include/my.h"
 #include "include/push_swap.h"
 
+void check_end(List *lb)
+{
+	if (lb->first->next == NULL)
+		my_putstr("pa");
+	else
+		my_putstr("pa ");
+}
+
 int special_cases(int ac, char **av)
 {
 	int j = 0;
@@ -61,11 +69,10 @@ int main(int ac, char **av)
 		sorter(la, lb);
 	while (lb->first->next != NULL) {
 		pa(la, lb);
-		if (lb->first->next == NULL)
-			my_putstr("pa");
-		else
-			my_putstr("pa ");
+		check_end(lb);
 	}
+	free_list(la);
+	free_list(lb);
 	my_putchar('\n');
 	return (0);
 }

@@ -47,6 +47,20 @@ int deletion(List *list)
 	return (0);
 }
 
+int free(List *list)
+{
+	if (list == NULL)
+		return (84);
+	while (list->first != NULL) {
+		Element *temp = list->first;
+
+		list->first = list->first->next;
+		free(temp);
+	}
+	free(list);
+	return (0);
+}
+
 int display(List *list)
 {
 	Element *actual = list->first;
