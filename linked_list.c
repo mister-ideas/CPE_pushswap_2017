@@ -47,7 +47,7 @@ int deletion(List *list)
 	return (0);
 }
 
-int free(List *list)
+int free_list(List *list)
 {
 	if (list == NULL)
 		return (84);
