@@ -39,10 +39,10 @@ void sorter(List *la, List *lb)
 		my_putstr("pb ");
 	} else if (lb->first->nb > la->first->nb) {
 		pa(la, lb);
-		my_putstr("pb ");
+		my_putstr("pa ");
 	} else {
 		pb(lb, la);
-		my_putchar("pb ");
+		my_putstr("pb ");
 	}
 }
 
@@ -61,8 +61,10 @@ int main(int ac, char **av)
 		sorter(la, lb);
 	while (lb->first->next != NULL) {
 		pa(la, lb);
-		if (lb->first->next != NULL)
-			my_putchar(' ');
+		if (lb->first->next == NULL)
+			my_putstr("pa");
+		else
+			my_putstr("pa ");
 	}
 	my_putchar('\n');
 	return (0);
