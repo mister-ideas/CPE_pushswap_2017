@@ -56,8 +56,8 @@ void sorter(List_t *la, List_t *lb)
 
 int main(int ac, char **av)
 {
-	List_t *la = initialisation(ac, av);
-	List_t *lb = initialisation(ac, av);
+	List_t *la = initialisation();
+	List_t *lb = initialisation();
 
 	if (ac == 1)
 		return (84);
