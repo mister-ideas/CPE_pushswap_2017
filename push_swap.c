@@ -9,7 +9,7 @@
 #include "include/my.h"
 #include "include/push_swap.h"
 
-void check_end(List *lb)
+void check_end(List_t *lb)
 {
 	if (lb->first->next == NULL)
 		my_putstr("pa");
@@ -21,7 +21,7 @@ int special_cases(int ac, char **av)
 {
 	int j = 0;
 
-	if (ac == 2 || ac > 1001) {
+	if (ac == 2 || ac > 2001) {
 		my_putchar('\n');
 		return (1);
 	}
@@ -36,7 +36,7 @@ int special_cases(int ac, char **av)
 	return (0);
 }
 
-void sorter(List *la, List *lb)
+void sorter(List_t *la, List_t *lb)
 {
 	if (la->first->nb > la->first->next->nb) {
 		swap(la);
@@ -56,8 +56,8 @@ void sorter(List *la, List *lb)
 
 int main(int ac, char **av)
 {
-	List *la = initialisation(ac, av);
-	List *lb = initialisation(ac, av);
+	List_t *la = initialisation(ac, av);
+	List_t *lb = initialisation(ac, av);
 
 	if (ac == 1)
 		return (84);

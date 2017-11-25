@@ -7,13 +7,13 @@
 
 SRC_DIR=	.
 
-SRC=		$(SRC_DIR)/push_swap.c 		\
+SRC=		$(SRC_DIR)/push_swap.c		\
 		$(SRC_DIR)/linked_list.c	\
 		$(SRC_DIR)/operations.c
 
 OBJ=		$(SRC:.c=.o)
 
-CFLAGS= 	-W -Wall -fno-builtin
+CFLAGS=		-W -Wall -fno-builtin
 
 CPPFLAGS=	-I include/
 
@@ -31,7 +31,7 @@ clean:
 		rm -f $(OBJ)
 		make clean -C lib/src
 
-fclean: 	clean
+fclean:		clean
 		rm -f $(NAME)
 		make fclean -C lib/src
 

@@ -9,10 +9,10 @@
 #include "include/my.h"
 #include "include/push_swap.h"
 
-List *initialisation()
+List_t *initialisation(void)
 {
-	List *list = malloc(sizeof(*list));
-	Element *element = malloc(sizeof(*element));
+	List_t *list = malloc(sizeof(*list));
+	Element_t *element = malloc(sizeof(*element));
 
 	if (list == NULL || element == NULL)
 		return (84);
@@ -22,9 +22,9 @@ List *initialisation()
 	return (list);
 }
 
-int insertion(List *list, int new_nb)
+int insertion(List_t *list, int new_nb)
 {
-	Element *new = malloc(sizeof(*new));
+	Element_t *new = malloc(sizeof(*new));
 
 	if (list == NULL || new == NULL)
 		return (84);
@@ -34,9 +34,9 @@ int insertion(List *list, int new_nb)
 	return (0);
 }
 
-int deletion(List *list)
+int deletion(List_t *list)
 {
-	Element *to_delete = list->first;
+	Element_t *to_delete = list->first;
 
 	if (list == NULL)
 		return (84);
@@ -47,12 +47,12 @@ int deletion(List *list)
 	return (0);
 }
 
-int free_list(List *list)
+int free_list(List_t *list)
 {
 	if (list == NULL)
 		return (84);
 	while (list->first != NULL) {
-		Element *temp = list->first;
+		Element_t *temp = list->first;
 
 		list->first = list->first->next;
 		free(temp);
@@ -61,9 +61,9 @@ int free_list(List *list)
 	return (0);
 }
 
-int display(List *list)
+int display(List_t *list)
 {
-	Element *actual = list->first;
+	Element_t *actual = list->first;
 
 	if (list == NULL)
 		return (84);

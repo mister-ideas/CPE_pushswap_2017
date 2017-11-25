@@ -7,27 +7,23 @@
 
 int my_getnbr(char const *str)
 {
-	int i = 0;
 	int nb = 0;
-	int neg = 0;
+	int isneg = 1;
+	int i = 0;
 
-	while (str[i]) {
-		while (str[i] == '+' || str[i] == '-') {
-			if (str[i] == '-') {
-				neg++;
-			}
-			i += 1;
-		}
-		if (str[i] >= '0' && str[i] <= '9')
-			nb = nb * 10 + (str[i] - '0');
-		if (str[i] < '0' || str[i] > '9') {
-			if (neg % 2 == 1)
-				nb = nb * -1;
-			return (nb);
-		}
-		i++;
+	while (str[i] == '+' || str[i] == '-') {
+		if (str[i] == '-')
+			isneg = isneg * -1;
+		i += 1;
 	}
-	if (neg %2 == 1)
-		nb = nb * -1;
-	return (nb);
+	while (str[i]) {
+		if (str[i] >= '0' && str[i] <= '9') {
+			nb = nb * 10;
+			nb = nb + str[i] - '0';
+			i = i + 1;
+		}
+		else
+			return (nb * isneg);
+	}
+	return (nb * isneg);
 }
