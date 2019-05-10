@@ -24,7 +24,7 @@ You must create a program in which l_a is given as parameter (all numbers are va
 $ make
 
 # Usage
-$ ./pushswap [number, ]* | cat -e
+$ ./pushswap [numbers] | cat -e
 
 # Mark
 **11,5/20**
